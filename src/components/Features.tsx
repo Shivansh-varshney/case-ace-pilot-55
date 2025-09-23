@@ -29,7 +29,7 @@ const features = [
   },
   {
     icon: Calendar,
-    title: "Case Comp Calendar",
+    title: "Corporate Case-Comp Calendar",
     description: "Never miss a deadline with our comprehensive corporate case competition tracker.",
     color: "text-red-800",
     route: "/competition-calendar"
@@ -114,7 +114,7 @@ const Features = () => {
                 onClick={handleCardClick}
               >
                 <CardContent className="p-6 space-y-4">
-                  <div className="w-12 h-12 rounded-xl bg-gradient-secondary flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                  <div className="w-12 h-12 rounded-xl flex items-center bg-foreground justify-center group-hover:scale-110 transition-transform duration-300">
                     <Icon className={`w-6 h-6 ${feature.color}`} />
                   </div>
 

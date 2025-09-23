@@ -47,12 +47,12 @@
     --gradient-secondary: linear-gradient(135deg, hsl(86 93% 84%) 0%, hsl(135 10% 25%) 100%);
     --gradient-subtle: linear-gradient(135deg, hsl(240 20% 1%) 0%, hsl(135 10% 25%) 100%);
     --gradient-hero: linear-gradient(135deg, hsl(240 20% 1%) 0%, hsl(135 10% 25%) 50%, hsl(270 5% 24%) 100%);
-    
+
     /* Shadows - Enhanced for custom dark theme */
     --shadow-soft: 0 2px 40px -4px hsl(2 100% 20% / 0.2);
     --shadow-medium: 0 8px 30px -6px hsl(2 100% 20% / 0.3);
     --shadow-strong: 0 20px 50px -12px hsl(2 100% 20% / 0.4);
-    
+
     /* Transitions */
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     --transition-spring: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
@@ -69,6 +69,62 @@
     --sidebar-border: 270 5% 24%;
     --sidebar-ring: 2 100% 20%;
   }
+
+  .dark {
+    /* Dark theme (primary) - Futuristic forum */
+    --background: 0 0% 6%;
+    --foreground: 86 93% 84%;
+
+    --card: 0 0% 8%;
+    --card-foreground: 86 93% 84%;
+
+    --popover: 0 0% 8%;
+    --popover-foreground: 86 93% 84%;
+
+    --primary: 0 70% 50%;
+    --primary-foreground: 86 93% 84%;
+
+    --secondary: 0 0% 12%;
+    --secondary-foreground: 86 93% 84%;
+
+    --muted: 0 0% 12%;
+    --muted-foreground: 86 93% 84%;
+
+    --accent: 0 0% 12%;
+    --accent-foreground: 0 70% 50%;
+
+    --destructive: 0 70% 50%;
+    --destructive-foreground: 86 93% 84%;
+
+    --border: 0 0% 15%;
+    --input: 0 0% 12%;
+    --ring: 0 70% 50%;
+
+    /* Forum specific dark colors */
+    --forum-surface: 0 0% 8%;
+    --forum-surface-hover: 0 0% 10%;
+    --forum-border: 0 0% 15%;
+    --forum-accent: 0 70% 50%;
+    --forum-accent-foreground: 86 93% 84%;
+    --forum-upvote: 120 60% 50%;
+    --forum-downvote: 0 70% 50%;
+    --forum-neutral: 0 0% 40%;
+
+    /* Texture and accent colors for dark mode */
+    --texture-gray: 0 0% 12%;
+    --accent-teal: 180 20% 25%;
+    --accent-teal-dark: 180 15% 20%;
+
+    /* Sidebar dark theme */
+    --sidebar-background: 0 0% 4%;
+    --sidebar-foreground: 86 93% 84%;
+    --sidebar-primary: 0 70% 50%;
+    --sidebar-primary-foreground: 86 93% 84%;
+    --sidebar-accent: 0 0% 8%;
+    --sidebar-accent-foreground: 86 93% 84%;
+    --sidebar-border: 0 0% 12%;
+    --sidebar-ring: 0 70% 50%;
+  }
 }
 
 @layer base {
@@ -76,20 +132,71 @@
     @apply border-border;
   }
 
-  body {
+  /* body {
     @apply bg-background text-foreground font-inter antialiased;
-  }
+  } */
 
   html {
     scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-feature-settings: 'rlig' 1, 'calt' 1;
+    background-image:
+      radial-gradient(circle at 25% 25%, hsl(var(--accent-teal)) 0%, transparent 50%),
+      radial-gradient(circle at 75% 75%, hsl(var(--texture-gray)) 0%, transparent 50%),
+      linear-gradient(135deg, transparent 25%, hsl(var(--accent-teal-dark))/5% 25%, hsl(var(--accent-teal-dark))/5% 50%, transparent 50%);
+    background-size: 800px 800px, 600px 600px, 100px 100px;
+    background-attachment: fixed;
   }
 }
 
 @layer utilities {
   .bg-grid-pattern {
-    background-image: 
+    background-image:
       linear-gradient(to right, hsl(var(--border)) 1px, transparent 1px),
       linear-gradient(to bottom, hsl(var(--border)) 1px, transparent 1px);
     background-size: 3rem 3rem;
+  }
+}
+
+@layer components {
+
+  /* Forum Components */
+  .forum-card {
+    @apply bg-card border border-border rounded-lg shadow-sm transition-all duration-200;
+  }
+
+  .forum-card:hover {
+    @apply border-primary/20 shadow-md;
+  }
+
+  .forum-surface {
+    @apply bg-[hsl(var(--forum-surface))] border-[hsl(var(--forum-border))];
+  }
+
+  .forum-surface:hover {
+    @apply bg-[hsl(var(--forum-surface-hover))];
+  }
+
+  .vote-button {
+    @apply p-2 rounded-md transition-all duration-200 hover:bg-muted;
+  }
+
+  .vote-button.upvoted {
+    @apply text-[hsl(var(--forum-upvote))] bg-[hsl(var(--forum-upvote))]/10;
+  }
+
+  .vote-button.downvoted {
+    @apply text-[hsl(var(--forum-downvote))] bg-[hsl(var(--forum-downvote))]/10;
+  }
+
+  .forum-accent {
+    @apply text-[hsl(var(--forum-accent))] hover:text-[hsl(var(--forum-accent))]/80;
+  }
+
+  .thread-line {
+    @apply border-l-2 border-border ml-4 pl-4;
   }
 }

@@ -59,7 +59,7 @@ const Footer = () => {
   };
 
   return (
-    <footer className="bg-foreground text-background">
+    <footer className="bg-background text-foreground">
       <div className="container mx-auto px-6 py-16">
         <div className="grid lg:grid-cols-4 gap-12">
           {/* Brand */}
@@ -71,7 +71,7 @@ const Footer = () => {
               <span className="text-xl font-bold">Consultory</span>
             </div>
 
-            <p className="text-background/80 max-w-md leading-relaxed">
+            <p className="text-foreground/80 max-w-md leading-relaxed">
               Built for ambitious students who think ahead. Practice, prep and present with structure and smart tools that work as hard as you do.
             </p>
 
@@ -109,14 +109,14 @@ const Footer = () => {
                   variant="outline"
                   size="sm"
                   onClick={() => handleAuthClick(false)}
-                  className="border-background/20 text-foreground hover:bg-background/10"
+                  className="border-foreground/20 text-foreground hover:bg-foreground/10"
                 >
                   Sign In
                 </Button>
                 <Button
                   size="sm"
                   onClick={() => handleAuthClick(true)}
-                  className="bg-background text-foreground hover:bg-background/90"
+                  className="bg-foreground text-foreground hover:bg-foreground/90"
                 >
                   Get Started
                 </Button>
@@ -133,7 +133,7 @@ const Footer = () => {
                   <li key={linkIndex}>
                     <button
                       onClick={() => handleLinkClick(link.path)}
-                      className="text-background/80 hover:text-background transition-colors duration-200 text-left"
+                      className="text-foreground/80 hover:text-foreground transition-colors duration-200 text-left"
                     >
                       {link.name}
                     </button>
@@ -145,13 +145,13 @@ const Footer = () => {
         </div>
 
         {/* Bottom */}
-        <div className="border-t border-background/20 mt-12 pt-8">
+        <div className="border-t border-foreground/20 mt-12 pt-8">
           <div className="flex flex-col sm:flex-row justify-between items-start gap-6 mb-6">
             <div className="text-center sm:text-left">
-              <p className="text-background/60 text-sm">
+              <p className="text-foreground/60 text-sm">
                 © 2025 Consultory. All rights reserved.
               </p>
-              <p className="text-background/80 text-sm font-medium mt-1">
+              <p className="text-foreground/80 text-sm font-medium mt-1">
                 Built by students, for students.
               </p>
             </div>
@@ -159,11 +159,11 @@ const Footer = () => {
             {/* About Us */}
             <div className="space-y-4">
               <h3 className="font-semibold text-lg">About Us</h3>
-              <div className="flex gap-8">
-                <div className="flex items-center gap-2">
+              <div className="flex grid md:grid-cols-3 gap-3 md:gap-8">
+                <div className="flex items-center gap-4 md:gap-2">
                   <div>
-                    <p className="text-background/80 text-sm font-medium">Anushka Sharma</p>
-                    <p className="text-background/60 text-xs">Co-founder, Consultory</p>
+                    <p className="text-foreground/80 text-sm font-medium">Anushka Sharma</p>
+                    <p className="text-foreground/60 text-xs">Co-founder, Consultory</p>
                   </div>
                   <Button
                     variant="ghost"
@@ -174,10 +174,10 @@ const Footer = () => {
                     <Linkedin className="w-4 h-4" />
                   </Button>
                 </div>
-                <div className="flex items-center gap-2">
+                <div className="flex items-center gap-4 md:gap-2">
                   <div>
-                    <p className="text-background/80 text-sm font-medium">Shagun Chaubey</p>
-                    <p className="text-background/60 text-xs">Co-founder, Consultory</p>
+                    <p className="text-foreground/80 text-sm font-medium">Shagun Chaubey</p>
+                    <p className="text-foreground/60 text-xs">Co-founder, Consultory</p>
                   </div>
                   <Button
                     variant="ghost"
@@ -188,10 +188,10 @@ const Footer = () => {
                     <Linkedin className="w-4 h-4" />
                   </Button>
                 </div>
-                <div className="flex items-center gap-2">
+                <div className="flex items-center gap-4 md:gap-2">
                   <div>
-                    <p className="text-background/80 text-sm font-medium">Shivansh Varshney</p>
-                    <p className="text-background/60 text-xs">Co-founder, Consultory</p>
+                    <p className="text-foreground/80 text-sm font-medium">Shivansh Varshney</p>
+                    <p className="text-foreground/60 text-xs">Co-founder, Consultory</p>
                   </div>
                   <Button
                     variant="ghost"
